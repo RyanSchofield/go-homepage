@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>pi1.local</title>
+		<link rel="stylesheet" href="styles/styles.css">
+		<script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
+	</head>
+	<body
+		<div class="outer-wrapper">
+		<div class="light-control">
+		<h1> Control lights </h1>
+			<div class="buttons">
+				<button 
+					hx-post="/on"
+					hx-trigger="click"
+					hx-swap="none"
+				>
+					On
+				</button>
+				<button 
+					hx-post="/off"
+					hx-trigger="click"
+					hx-swap="none"
+				>
+					Off
+				</button>
+			</div>
+		</div>
+		<div class="weather">
+			<div hx-get="/trivia" hx-trigger="load"></div>
+		</div>
+		<div class="movies">
+			<div id="video"></div>
+			<div hx-get="/movies" hx-trigger="load"></div>
+		</div>
+		</div>
+	</body>
+</html>
